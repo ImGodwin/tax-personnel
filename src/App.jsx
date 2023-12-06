@@ -9,7 +9,38 @@ function App() {
       <BrowserRouter>
         <TopBar />
         <Routes>
-          <Route />
+          <Route
+            path="/learn"
+            element={
+              {
+                /* <Learn/> */
+              }
+            }
+          />
+          <Route
+            path="/learn"
+            element={
+              {
+                /* <AboutUs/> */
+              }
+            }
+          />
+          <Route
+            path="/learn"
+            element={
+              {
+                /* <Contact/> */
+              }
+            }
+          />
+          <Route
+            path="/learn"
+            element={
+              {
+                /* <Register/> */
+              }
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

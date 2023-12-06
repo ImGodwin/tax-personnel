@@ -15,8 +15,16 @@ const TopBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Nav.Link href="#deets">Learn</Nav.Link>
-            <Nav.Link href="#deets">About Us</Nav.Link>
+            <Nav.Link href="#deets">
+              <Link className={`nav-link ${location.pathname === "learn" && "active"}`} to="learn">
+                Learn
+              </Link>
+            </Nav.Link>
+            <Nav.Link href="#deets">
+              <Link className={`nav-link ${location.pathname === "learn" && "active"}`} to="learn">
+                About Us
+              </Link>
+            </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               Contact
             </Nav.Link>

@@ -4,26 +4,38 @@ import { Link, useLocation } from "react-router-dom";
 const TopBar = () => {
   const location = useLocation();
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-dark text-light">
+    <Navbar collapseOnSelect expand="lg" className="bg-dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand style={{ color: "white" }}>
           <Link className={`nav-link ${location.pathname === "/" && "active"}`} to="/">
-            React-Bootstrap
+            IoLavoro
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Link className={`nav-link ${location.pathname === "learn" && "active"}`} to="learn">
+            <Link
+              style={{ color: "white" }}
+              className={`nav-link ${location.pathname === "learn" && "active"}`}
+              to="learn"
+            >
               Learn
             </Link>
 
-            <Link className={`nav-link ${location.pathname === "about-us" && "active"}`} to="about-us">
+            <Link
+              style={{ color: "white" }}
+              className={`nav-link ${location.pathname === "about-us" && "active"}`}
+              to="about-us"
+            >
               About Us
             </Link>
 
-            <Link className={`nav-link ${location.pathname === "contact" && "active"}`} to="contact">
+            <Link
+              style={{ color: "white" }}
+              className={`nav-link ${location.pathname === "contact" && "active"}`}
+              to="contact"
+            >
               Contact
             </Link>
 

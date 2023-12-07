@@ -6,8 +6,12 @@ const TopBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-dark">
       <Container>
-        <Navbar.Brand style={{ color: "white" }}>
-          <Link className={`nav-link ${location.pathname === "/" && "active"}`} to="/">
+        <Navbar.Brand>
+          <Link
+            style={{ color: "white", border: "2px solid" }}
+            className={`nav-link ${location.pathname === "/" && "active"}`}
+            to="/"
+          >
             IoLavoro
           </Link>
         </Navbar.Brand>
@@ -44,12 +48,12 @@ const TopBar = () => {
                 Join
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">
+                <Dropdown.Item>
                   <Link className={`nav-link ${location.pathname === "contact" && "active"}`} to="contact">
                     Login
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item href="#/action-2">
+                <Dropdown.Item>
                   <Link className={`nav-link ${location.pathname === "contact" && "active"}`} to="contact">
                     Register
                   </Link>

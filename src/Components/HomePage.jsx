@@ -4,6 +4,7 @@ import MapAndCity from "./MapAndCity";
 import Quote from "./Quote";
 import Duty from "./Duty";
 import Footer from "./Footer";
+import CityIntroduction from "./CityIntroduction";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <AboveTheFold />
       <Duty />
       <Quote />
+      <CityIntroduction />
       <MapAndCity />
       <Footer />
     </Stack>

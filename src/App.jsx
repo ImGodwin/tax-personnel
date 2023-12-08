@@ -43,6 +43,10 @@ function App() {
               }
             }
           />
+          {/*   <Route
+            path="*"
+            element={<NotFound spacings="mt-5" mainText="404 — Pagina non trovata" btnVariant="danger" />}
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>

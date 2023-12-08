@@ -45,7 +45,7 @@ const TopBar = () => {
 
             <Dropdown className="mx-3">
               <Dropdown.Toggle variant="success" className="px-3" id="dropdown-basic">
-                Join
+                Join Collaborators
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item>

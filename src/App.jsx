@@ -3,6 +3,7 @@ import "./App.css";
 import TopBar from "./Components/TopBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
@@ -43,10 +44,7 @@ function App() {
               }
             }
           />
-          {/*   <Route
-            path="*"
-            element={<NotFound spacings="mt-5" mainText="404 — Pagina non trovata" btnVariant="danger" />}
-          /> */}
+          <Route path="*" element={<NotFound spacings="mt-5" mainText="404 — Invalid Request" btnVariant="danger" />} />
         </Routes>
       </BrowserRouter>
     </div>

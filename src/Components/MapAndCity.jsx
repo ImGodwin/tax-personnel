@@ -1,12 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Map from "./Map";
 import City from "./City";
+import GoogleMap from "./GoogleMap";
 const MapAndCity = () => {
   return (
     <Container>
       <Row>
         <Col lg={4}>
-          <Map />
+          <GoogleMap />
         </Col>
         <Col lg={8}>
           <City />

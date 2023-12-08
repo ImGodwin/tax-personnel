@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Col, Container, Form, FormControl, FormGroup, FormLabel, Row, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Login = () => {
   const [login, setLogin] = useState({ email: "", password: "" });
@@ -57,10 +58,15 @@ const Login = () => {
               <p className="d-flex me-auto mt-3">
                 If you're not registered, click <Link to={"/register"}> here</Link>
               </p>
+              <p className="d-flex me-auto">
+                Return to <Link to={"/"}> home</Link> page
+              </p>
             </Form>
           </Col>
         </div>
       </Container>
+
+      <Footer />
     </>
   );
 };

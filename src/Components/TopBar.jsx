@@ -49,12 +49,12 @@ const TopBar = () => {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item>
-                  <Link className={`nav-link ${location.pathname === "contact" && "active"}`} to="contact">
+                  <Link className={`nav-link ${location.pathname === "/login" && "active"}`} to="/login">
                     Login
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link className={`nav-link ${location.pathname === "contact" && "active"}`} to="contact">
+                  <Link className={`nav-link ${location.pathname === "/register" && "active"}`} to="/register">
                     Register
                   </Link>
                 </Dropdown.Item>

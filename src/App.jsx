@@ -4,6 +4,7 @@ import TopBar from "./Components/TopBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import NotFound from "./Components/NotFound";
+import Login from "./Components/Login";
 
 function App() {
   return (
@@ -28,14 +29,7 @@ function App() {
               }
             }
           />
-          <Route
-            path="/login"
-            element={
-              {
-                /* <Login/> */
-              }
-            }
-          />
+          <Route path="/login" element={<Login />} />
           <Route
             path="/register"
             element={

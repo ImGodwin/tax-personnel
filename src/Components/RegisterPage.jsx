@@ -33,7 +33,7 @@ const RegisterPage = () => {
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter name
+            name
           </FormLabel>
           <FormControl
             type="text"
@@ -46,7 +46,7 @@ const RegisterPage = () => {
 
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter surname
+            surname
           </FormLabel>
           <FormControl
             type="text"
@@ -58,7 +58,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter email
+            email
           </FormLabel>
           <FormControl
             type="text"
@@ -70,7 +70,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter telephone number
+            telephone number
           </FormLabel>
           <FormControl
             type="text"
@@ -82,7 +82,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter address
+            address
           </FormLabel>
           <FormControl
             type="text"
@@ -94,7 +94,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter cityName
+            cityName
           </FormLabel>
           <FormControl
             type="text"
@@ -106,7 +106,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter Partita Iva
+            Partita Iva
           </FormLabel>
           <FormControl
             type="text"
@@ -118,7 +118,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter description
+            description
           </FormLabel>
           <FormControl
             as="textarea"
@@ -131,7 +131,7 @@ const RegisterPage = () => {
         </FormGroup>
         <FormGroup>
           <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-            Enter password
+            password
           </FormLabel>
           <FormControl
             type="password"

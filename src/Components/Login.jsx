@@ -19,14 +19,14 @@ const Login = () => {
   return (
     <>
       <Container className=" mt-5 w-75 " style={{ height: "100vh" }}>
-        <div className="d-flex row align-items-center ">
-          <Col className="mt-5">
+        <div className="d-flex row border border-dark bg-secondary-subtle justify-content-evenly p-5">
+          <Col md={12} lg={6} className="">
             <Image
               style={{ objectFit: "cover", height: "100%", width: "100%" }}
               src="https://images.unsplash.com/photo-1580377968103-84cadc052dc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
           </Col>
-          <Col className="ms-5 mt-5">
+          <Col className="" md={12} lg={6}>
             <Form onSubmit={handleSubmit}>
               <FormGroup>
                 <FormLabel>Enter email</FormLabel>

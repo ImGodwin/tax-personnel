@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import NotFound from "./Components/NotFound";
 import Login from "./Components/Login";
+import RegisterPage from "./Components/RegisterPage";
 
 function App() {
   return (
@@ -30,14 +31,7 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
-          <Route
-            path="/register"
-            element={
-              {
-                /* <Register/> */
-              }
-            }
-          />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<NotFound spacings="mt-5" mainText="404 — Invalid Request" btnVariant="danger" />} />
         </Routes>
       </BrowserRouter>

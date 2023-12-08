@@ -26,13 +26,17 @@ const RegisterPage = () => {
   };
 
   return (
-    <Container>
+    <Container className="mt-5 w-50">
+      <div className="display-5 mb-3" style={{ color: "green" }}>
+        Enter details correctly
+      </div>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <FormLabel>Enter email</FormLabel>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter name
+          </FormLabel>
           <FormControl
             type="text"
-            placeholder="name"
             onChange={firstName => {
               handleChange("name", firstName.target.value);
             }}
@@ -41,10 +45,96 @@ const RegisterPage = () => {
         </FormGroup>
 
         <FormGroup>
-          <FormLabel>Enter password</FormLabel>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter surname
+          </FormLabel>
           <FormControl
             type="text"
-            placeholder="password"
+            onChange={lastName => {
+              handleChange("surname", lastName.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter email
+          </FormLabel>
+          <FormControl
+            type="text"
+            onChange={mail => {
+              handleChange("email", mail.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter telephone number
+          </FormLabel>
+          <FormControl
+            type="text"
+            onChange={cellNum => {
+              handleChange("telephone", cellNum.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter address
+          </FormLabel>
+          <FormControl
+            type="text"
+            onChange={addy => {
+              handleChange("address", addy.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter cityName
+          </FormLabel>
+          <FormControl
+            type="text"
+            onChange={location => {
+              handleChange("cityName", location.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter Partita Iva
+          </FormLabel>
+          <FormControl
+            type="text"
+            onChange={credential => {
+              handleChange("pIva", credential.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter description
+          </FormLabel>
+          <FormControl
+            as="textarea"
+            type="text"
+            onChange={longText => {
+              handleChange("decription", longText.target.value);
+            }}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
+            Enter password
+          </FormLabel>
+          <FormControl
+            type="password"
             onChange={credential => {
               handleChange("password", credential.target.value);
             }}
@@ -53,12 +143,14 @@ const RegisterPage = () => {
         </FormGroup>
 
         <div className="d-flex">
-          <Button className="bg-success mt-3 me-auto px-4">Login</Button>
+          <Button className="bg-success mt-3 me-auto px-4">Register</Button>
         </div>
         <p className="d-flex me-auto mt-3">
-          If you're not registered, click <Link to={"/register"}> here</Link>
+          Go to <Link to={"/login"}> login page</Link>
         </p>
       </Form>
     </Container>
   );
 };
+
+export default RegisterPage;

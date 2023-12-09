@@ -30,7 +30,7 @@ const TopBar = () => {
             <Link
               style={{ color: "white" }}
               className={`nav-link ${location.pathname === "about-us" && "active"}`}
-              to="about-us"
+              to="/about-us"
             >
               About Us
             </Link>
@@ -38,7 +38,7 @@ const TopBar = () => {
             <Link
               style={{ color: "white" }}
               className={`nav-link ${location.pathname === "contact" && "active"}`}
-              to="contact"
+              to="/contact"
             >
               Contact
             </Link>
@@ -62,6 +62,9 @@ const TopBar = () => {
             </Dropdown>
           </Nav>
         </Navbar.Collapse>
+        <Link style={{ color: "white" }} className={`nav-link ${location.pathname === "me" && "active"}`} to="/me">
+          Profile
+        </Link>
       </Container>
     </Navbar>
   );

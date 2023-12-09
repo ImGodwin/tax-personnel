@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Button, Container, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { useState } from "react";
 
-const RegisterPage = () => {
+const MyPage = () => {
   const [register, setRegister] = useState({
     name: "",
     surname: "",
@@ -157,4 +157,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default MyPage;

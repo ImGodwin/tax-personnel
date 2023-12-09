@@ -43,7 +43,7 @@ const Login = () => {
               <FormGroup>
                 <FormLabel>Enter password</FormLabel>
                 <FormControl
-                  type="text"
+                  type="password"
                   placeholder="password"
                   onChange={credential => {
                     handleChange("password", credential.target.value);

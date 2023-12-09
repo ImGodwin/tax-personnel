@@ -1,4 +1,4 @@
-import { Button, Container, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
+import { Button, Container, Form, FormControl, FormGroup, FormLabel, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { useState } from "react";
@@ -28,9 +28,21 @@ const MyPage = () => {
 
   return (
     <>
+      <div className="mt-5">
+        <Image
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          style={{ height: "200px", borderRadius: "25%" }}
+        />
+      </div>
+      <div className="mt-3">
+        <label for="avatar">Change profile picture: </label>
+
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+      </div>
+
       <Container className="mt-5 w-50">
         <div className="display-5 mb-3" style={{ color: "green" }}>
-          Enter details correctly
+          Update Profile
         </div>
         <Form onSubmit={handleSubmit}>
           <FormGroup>

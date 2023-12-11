@@ -34,11 +34,6 @@ const MyPage = () => {
           style={{ height: "200px", borderRadius: "25%" }}
         />
       </div>
-      <div className="mt-3">
-        <label for="avatar">Change profile picture: </label>
-
-        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
-      </div>
 
       <Container className="mt-5 w-50">
         <div className="display-5 mb-3" style={{ color: "green" }}>
@@ -66,18 +61,6 @@ const MyPage = () => {
               type="text"
               onChange={lastName => {
                 handleChange("surname", lastName.target.value);
-              }}
-              required
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              email
-            </FormLabel>
-            <FormControl
-              type="text"
-              onChange={mail => {
-                handleChange("email", mail.target.value);
               }}
               required
             />
@@ -143,25 +126,10 @@ const MyPage = () => {
               required
             />
           </FormGroup>
-          <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              password
-            </FormLabel>
-            <FormControl
-              type="password"
-              onChange={credential => {
-                handleChange("password", credential.target.value);
-              }}
-              required
-            />
-          </FormGroup>
-
-          <div className="d-flex">
-            <Button className="bg-success mt-3 me-auto px-4">Register</Button>
-          </div>
-          <p className="d-flex me-auto mt-3">
-            Go to <Link to={"/login"}> login page</Link>
-          </p>
+          <Button className="mt-3" variant="success">
+            Update
+            {/* add a means to delete profile below */}
+          </Button>
         </Form>
       </Container>
       <Footer />

@@ -7,6 +7,7 @@ import NotFound from "./Components/NotFound";
 import Login from "./Components/Login";
 import RegisterPage from "./Components/RegisterPage";
 import MyPage from "./Components/MyPage";
+import CityPersonnel from "./Components/CityPersonnelPage";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/me" element={<MyPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/collaborators" element={<CityPersonnel />} />
           <Route path="*" element={<NotFound spacings="mt-5" mainText="404 — Invalid Request" btnVariant="danger" />} />
         </Routes>
       </BrowserRouter>

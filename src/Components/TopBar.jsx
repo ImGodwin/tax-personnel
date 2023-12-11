@@ -45,7 +45,9 @@ const TopBar = () => {
 
             <Dropdown className="mx-3">
               <Dropdown.Toggle variant="success" className="px-3" id="dropdown-basic">
-                Join Collaborators
+                Become a Collaborator
+                {/*this becomes a button, then the login/logout will be beside it 
+                the profile only appears if user is logged in */}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item>

@@ -3,7 +3,7 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 const SingleCollaborator = () => {
   return (
     <Container>
-      <Row className="d-flex">
+      <Row className="">
         <Col md={3} lg={3}>
           <Image
             style={{ height: "150px" }}
@@ -11,16 +11,11 @@ const SingleCollaborator = () => {
           />
         </Col>
         <Col md={3} className=" justify-content-start ">
-          <div className="">
-            <h3 className="d-flex mt-0 ms-0">Name</h3>
-           {/*  <div className="w-100">
-              dfvhADKafnfn,.AFNKdm,fgn ejebgfvJ,DCKdnfkjb.kudghfkjDFJbkbgf FMBSJBFBSbvMSMBGFJBSFMNGBA,
-              SFJBGNQBSFJAF,BVFSHDVFJBGHQRJGLNQETJGHQKERNRGLQERGH.JETLKGHQKERNGTKJ.QHERKJNGQKERHKGQ 
-                <Button className="ms-0">Contact Me</Button>
-            </div> */}
-
-            
+          <h3 className="d-flex mt-0 ms-0">Name</h3>
+          <div>
+            <p className="">dfvhADKafnfn,.AFNKdm,fgn ejebgfvJ,</p>
           </div>
+          <Button className="ms-0">Contact Me</Button>
         </Col>
       </Row>
     </Container>

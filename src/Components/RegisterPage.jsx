@@ -2,8 +2,12 @@ import { useState } from "react";
 import { Button, Container, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../redux/action";
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
+
   const [register, setRegister] = useState({
     name: "",
     surname: "",
@@ -22,6 +26,9 @@ const RegisterPage = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    console.log(register);
+    dispatch(registerUser(register));
 
     //fetch save here then useEffect
   };
@@ -126,7 +133,7 @@ const RegisterPage = () => {
               as="textarea"
               type="text"
               onChange={longText => {
-                handleChange("decription", longText.target.value);
+                handleChange("description", longText.target.value);
               }}
               required
             />
@@ -145,7 +152,9 @@ const RegisterPage = () => {
           </FormGroup>
 
           <div className="d-flex">
-            <Button className="bg-success mt-3 me-auto px-4">Register</Button>
+            <Button type="submit" className="bg-success mt-3 me-auto px-4">
+              Register
+            </Button>
           </div>
           <p className="d-flex me-auto mt-3">
             Go to <Link to={"/login"}> login page</Link>

@@ -1,5 +1,6 @@
 export const GET_CITIES = "GET_CITIES";
 export const SET_ADMIN = "SET_ADMIN";
+export const ADD_TOKEN = "ADD_TOKEN";
 export const ADD_USER = "ADD_USER";
 
 export const saveUser = user => ({ type: ADD_USER, payload: user });

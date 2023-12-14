@@ -2,9 +2,15 @@ import { useState } from "react";
 import { Button, Col, Container, Form, FormControl, FormGroup, FormLabel, Row, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../redux/action";
 
 const Login = () => {
-  const [login, setLogin] = useState({ email: "", password: "" });
+  const dispatch = useDispatch();
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleChange = (propertyName, propertyValue) => {
     setLogin({ ...login, [propertyName]: propertyValue });
@@ -12,7 +18,7 @@ const Login = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
+    dispatch(userLogin(login));
     //this is where i fetch POST
   };
 
@@ -53,7 +59,9 @@ const Login = () => {
               </FormGroup>
 
               <div className="d-flex">
-                <Button className="bg-success mt-3 me-auto px-4">Login</Button>
+                <Button type="submit" className="bg-success mt-3 me-auto px-4">
+                  Login
+                </Button>
               </div>
               <p className="d-flex me-auto mt-3">
                 If you're not registered, click <Link to={"/register"}> here</Link>

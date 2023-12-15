@@ -7,7 +7,7 @@ export const EVERY_CITY = "EVERY_CITY";
 //action creator
 export const saveUser = user => ({ type: ADD_USER, payload: user });
 export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
-export const eachFetchedCity = cityDetails => ({ type: ADD_TOKEN, payload: cityDetails });
+export const eachFetchedCity = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
 
 //fetch auth
 

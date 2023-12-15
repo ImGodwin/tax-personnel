@@ -2,10 +2,12 @@ export const GET_CITIES = "GET_CITIES";
 export const SET_ADMIN = "SET_ADMIN";
 export const ADD_TOKEN = "ADD_TOKEN";
 export const ADD_USER = "ADD_USER";
+export const EVERY_CITY = "EVERY_CITY";
 
 //action creator
 export const saveUser = user => ({ type: ADD_USER, payload: user });
 export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
+export const eachFetchedCity = cityDetails => ({ type: ADD_TOKEN, payload: cityDetails });
 
 //fetch auth
 
@@ -49,6 +51,25 @@ export const userLogin = (loginPost, tokenStr) => {
         dispatch(saveLoginToken(tokenStr));
       } else {
         throw new Error(loginPost.message);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
+//fetch all cities
+
+export const getAllCities = () => {
+  return async dispatch => {
+    try {
+      let resp = await fetch("http://localhost:3002/public/city");
+      if (resp.ok) {
+        let fetchedCities = await resp.json();
+        dispatch(eachFetchedCity(fetchedCities.content));
+        console.log(fetchedCities.content);
+      } else {
+        throw new Error("Fetch Error");
       }
     } catch (error) {
       console.log(error.message);

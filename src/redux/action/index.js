@@ -3,11 +3,13 @@ export const SET_ADMIN = "SET_ADMIN";
 export const ADD_TOKEN = "ADD_TOKEN";
 export const ADD_USER = "ADD_USER";
 export const EVERY_CITY = "EVERY_CITY";
+export const EDIT_USER = "EDIT_USER";
 
 //action creator
 export const saveUser = user => ({ type: ADD_USER, payload: user });
 export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
 export const eachFetchedCity = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
+export const editAUser = user => ({ type: EDIT_USER, payload: user });
 
 //fetch auth
 
@@ -70,6 +72,30 @@ export const getAllCities = () => {
         console.log(fetchedCities.content);
       } else {
         throw new Error("Fetch Error");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};
+
+//edit profile
+
+export const editProfile = details => {
+  return async dispatch => {
+    try {
+      const resp = await fetch("http://localhost:3002/taxpersonnel//update/profile", {
+        method: "PUT",
+        body: JSON.stringify(details),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+
+      const editDetails = resp.json();
+      if (editDetails.ok) {
+        dispatch(editAUser(editDetails));
+        console.log(editDetails);
       }
     } catch (error) {
       console.log(error.message);

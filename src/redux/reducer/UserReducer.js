@@ -1,8 +1,9 @@
-import { ADD_TOKEN, ADD_USER } from "../action";
+import { ADD_TOKEN, ADD_USER, EDIT_USER, editAUser } from "../action";
 
 const initialState = {
   token: "",
   user: null,
+  editUser: [],
 };
 
 const userReducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+
+    case EDIT_USER:
+      return {
+        ...state,
+        editAUser: [...state.editUser, action.payload],
       };
 
     default:

@@ -10,13 +10,14 @@ const City = () => {
 
   useEffect(() => {
     dispatch(getAllCities());
+    console.log("mounted");
   }, [cityArray.length]);
   return (
     <Container className="mb-5 ">
       <Row xs={12} md={8} lg={8} className="d-flex justify-content-evenly gy-5">
         {cityArray.map(singleCity => (
           <Col key={singleCity.id}>
-            <Link to={"/collaborators"}>
+            <Link to={"/collaborators/"}>
               <Image style={{ height: "150px" }} className="rounded" src={singleCity.avatar} />
             </Link>
           </Col>

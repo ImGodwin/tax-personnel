@@ -1,9 +1,13 @@
 import { Button, Container, Form, FormControl, FormGroup, FormLabel, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { editProfile } from "../redux/action";
 
 const MyPage = () => {
+  const myEdit = useSelector(state => state.user.editUser);
+  const dispatch = useDispatch();
   const [register, setRegister] = useState({
     name: "",
     surname: "",
@@ -22,9 +26,13 @@ const MyPage = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
+    dispatch(editProfile(register));
     //fetch save here then useEffect
   };
+
+  /*  useEffect(() => {
+    handleSubmit();
+  }, []); */
 
   return (
     <>

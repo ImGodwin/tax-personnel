@@ -1,13 +1,13 @@
 import { Col, Container, Row } from "react-bootstrap";
-import GoogleMap from "./GoogleMap";
 import SingleCollaborator from "./SingleCollaborator";
+import PersonnelMap from "./PersonnelMap";
 
 const PersonnelPage = () => {
   return (
     <Container>
       <Row>
         <Col lg={4}>
-          <GoogleMap />
+          <PersonnelMap />
         </Col>
         <Col lg={8}>
           <SingleCollaborator />

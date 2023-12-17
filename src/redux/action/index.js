@@ -4,12 +4,16 @@ export const ADD_TOKEN = "ADD_TOKEN";
 export const ADD_USER = "ADD_USER";
 export const EVERY_CITY = "EVERY_CITY";
 export const EDIT_USER = "EDIT_USER";
+export const GET_PERSONNEL = "GET_PERSONNEL";
 
 //action creator
 export const saveUser = user => ({ type: ADD_USER, payload: user });
 export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
 export const eachFetchedCity = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
 export const editAUser = user => ({ type: EDIT_USER, payload: user });
+
+const auth_token =
+  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxNzc1NzVmZC03MDAyLTQyOTMtYTJlYS1mYjZiYjY5MTczZDMiLCJpYXQiOjE3MDI4MDgzODksImV4cCI6MTcwMzQxMzE4OX0.OGfdML2euZr0qu6NjslMqKXBkO2zdqgZwynbLRPA-QyHBcKXzPtvIx7yc91xQZ8L";
 
 //fetch auth
 
@@ -102,3 +106,7 @@ export const editProfile = details => {
     }
   };
 };
+
+//select each city
+
+//export const getAllPersonnel = (auth)

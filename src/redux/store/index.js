@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import userReducer from "../reducer/UserReducer";
 import cityReducer from "../reducer/CityReducer";
+import personnelReducer from "../reducer/PersonnelReducer";
 
 const persistConfig = {
   key: "root",
@@ -15,6 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer,
   city: cityReducer,
+  personnel: personnelReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

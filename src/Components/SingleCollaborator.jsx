@@ -1,6 +1,8 @@
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 const SingleCollaborator = () => {
+  const param = useParams();
   return (
     <Container>
       <Row className="">

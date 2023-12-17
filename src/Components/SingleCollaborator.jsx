@@ -1,17 +1,27 @@
+import { useEffect } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllPersonnel } from "../redux/action";
 
 const SingleCollaborator = () => {
-  const param = useParams();
+  //const param = useParams();
+
+  const taxPersonnelArray = useSelector(state => state.personnel.personnelArr);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllPersonnel());
+    console.log("mounted");
+  }, []);
   return (
     <Container>
       <Row className="">
-        <Col md={3} lg={3}>
-          <Image
-            style={{ height: "150px" }}
-            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
-          />
-        </Col>
+        {taxPersonnelArray.map(singleCollaborator => (
+          <Col key={singleCollaborator.id} md={3} lg={3}>
+            <Image style={{ height: "150px" }} src={singleCollaborator.image} />
+          </Col>
+        ))}
+
         <Col md={3} className=" justify-content-start ">
           <h3 className="d-flex mt-0 ms-0">Name</h3>
           <div>

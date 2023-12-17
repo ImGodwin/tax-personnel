@@ -9,11 +9,9 @@ export const GET_PERSONNEL = "GET_PERSONNEL";
 //action creator
 export const saveUser = user => ({ type: ADD_USER, payload: user });
 export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
-export const eachFetchedCity = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
+export const allFetchedCities = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
 export const editAUser = user => ({ type: EDIT_USER, payload: user });
-
-const auth_token =
-  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxNzc1NzVmZC03MDAyLTQyOTMtYTJlYS1mYjZiYjY5MTczZDMiLCJpYXQiOjE3MDI4MDgzODksImV4cCI6MTcwMzQxMzE4OX0.OGfdML2euZr0qu6NjslMqKXBkO2zdqgZwynbLRPA-QyHBcKXzPtvIx7yc91xQZ8L";
+export const getAllCollaborators = client => ({ type: GET_PERSONNEL, payload: client });
 
 //fetch auth
 
@@ -72,8 +70,8 @@ export const getAllCities = () => {
       let resp = await fetch("http://localhost:3002/public/city");
       if (resp.ok) {
         let fetchedCities = await resp.json();
-        dispatch(eachFetchedCity(fetchedCities.content));
-        console.log(fetchedCities.content);
+        dispatch(allFetchedCities(fetchedCities.content));
+        //console.log(fetchedCities.content);
       } else {
         throw new Error("Fetch Error");
       }
@@ -107,6 +105,28 @@ export const editProfile = details => {
   };
 };
 
-//select each city
+//select each registered personnel
+const authKey =
+  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxNzc1NzVmZC03MDAyLTQyOTMtYTJlYS1mYjZiYjY5MTczZDMiLCJpYXQiOjE3MDI4MDgzODksImV4cCI6MTcwMzQxMzE4OX0.OGfdML2euZr0qu6NjslMqKXBkO2zdqgZwynbLRPA-QyHBcKXzPtvIx7yc91xQZ8L";
+export const getAllPersonnel = () => {
+  return async dispatch => {
+    console.log("logging");
+    try {
+      let resp = await fetch("http://localhost:3002/taxpersonnel", {
+        headers: {
+          Authorization: `Bearer ${authKey}`,
+        },
+      });
 
-//export const getAllPersonnel = (auth)
+      if (resp.ok) {
+        let fetchedPersonnel = await resp.json();
+        dispatch(getAllCollaborators(fetchedPersonnel.content));
+        console.log(fetchedPersonnel);
+      } else {
+        throw new Error("Fetch Error");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+};

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllCities } from "../redux/action";
 
-const City = () => {
+const Cities = () => {
   const cityArray = useSelector(state => state.city.content);
   const dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ const City = () => {
       <Row xs={12} md={8} lg={8} className="d-flex justify-content-evenly gy-5">
         {cityArray.map(singleCity => (
           <Col key={singleCity.id}>
-            <Link to={`/collaborators/${singleCity.latitude}/${singleCity.longitude}`}>
+            <Link to={"/collaborators"}>
               <Image style={{ height: "150px" }} className="rounded" src={singleCity.avatar} />
             </Link>
             <div style={{ color: "green" }} className="mt-2">
@@ -30,4 +30,4 @@ const City = () => {
   );
 };
 
-export default City;
+export default Cities;

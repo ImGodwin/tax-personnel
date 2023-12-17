@@ -1,4 +1,4 @@
-import { ADD_TOKEN, ADD_USER, EDIT_USER, editAUser } from "../action";
+import { ADD_TOKEN, ADD_USER, EDIT_USER } from "../action";
 
 const initialState = {
   token: "",

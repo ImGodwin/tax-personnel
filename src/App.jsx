@@ -35,7 +35,7 @@ function App() {
           <Route path="/me" element={<MyPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/collaborators/:lat/:lon" element={<CityPersonnel />} />
+          <Route path="/collaborators" element={<CityPersonnel />} />
           <Route path="*" element={<NotFound spacings="mt-5" mainText="404 — Invalid Request" btnVariant="danger" />} />
         </Routes>
       </BrowserRouter>

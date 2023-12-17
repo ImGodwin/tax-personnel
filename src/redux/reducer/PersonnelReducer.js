@@ -1,15 +1,15 @@
-import { GET_CITIES } from "../action";
+import { GET_PERSONNEL } from "../action";
 
 const initialState = {
-  personnel: [],
+  personnelArr: [],
 };
 
 const personnelReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_CITIES:
+    case GET_PERSONNEL:
       return {
         ...state,
-        personnel: action.payload,
+        personnelArr: action.payload,
       };
     default:
       return state;

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button, Col, Container, Form, FormControl, FormGroup, FormLabel, Row, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../redux/action";
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [login, setLogin] = useState({
     email: "",
@@ -18,8 +19,7 @@ const Login = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(userLogin(login));
-    //this is where i fetch POST
+    dispatch(userLogin(login)).then(() => navigate("/"));
   };
 
   return (

@@ -1,17 +1,25 @@
-import { ADD_NEW_USER, ADD_TOKEN } from "../action";
+import { ADD_NEW_USER, LOG_IN, LOG_OUT } from "../action";
 
 const initialState = {
   token: "",
   user: null,
-  editUser: [],
+  //editUser: [],
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TOKEN:
+    case LOG_IN: {
+      console.log(action.payload);
       return {
         ...state,
         token: action.payload,
+      };
+    }
+
+    case LOG_OUT:
+      return {
+        user: null,
+        token: "",
       };
 
     case ADD_NEW_USER:

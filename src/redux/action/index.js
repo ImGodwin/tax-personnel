@@ -1,6 +1,7 @@
 export const GET_CITIES = "GET_CITIES";
 export const SET_ADMIN = "SET_ADMIN";
-export const ADD_TOKEN = "ADD_TOKEN";
+export const LOG_IN = "LOG_IN";
+export const LOG_OUT = "LOG_OUT";
 export const ADD_NEW_USER = "ADD_NEW_USER";
 export const EVERY_CITY = "EVERY_CITY";
 export const EDIT_USER = "EDIT_USER";
@@ -9,11 +10,12 @@ export const GET_PERSONNEL = "GET_PERSONNEL";
 
 //action creator
 export const saveUser = user => ({ type: ADD_NEW_USER, payload: user });
-export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
+export const saveLoginToken = loginToken => ({ type: LOG_IN, payload: loginToken });
 export const allFetchedCities = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
 export const editAUser = user => ({ type: EDIT_USER, payload: user });
 export const getAllCollaborators = client => ({ type: GET_PERSONNEL, payload: client });
 export const getMyDetails = me => ({ type: GET_ME, payload: me });
+export const logout = () => ({ type: LOG_OUT, payload: null });
 //auth
 //fetch auth
 
@@ -29,7 +31,7 @@ export const registerUser = userDetails => {
       });
 
       const registerationDetails = response.json();
-      if (registerationDetails.ok) {
+      if (response.ok) {
         dispatch(saveUser(registerationDetails));
       } else {
         throw new Error(registerationDetails.message);
@@ -40,49 +42,58 @@ export const registerUser = userDetails => {
   };
 };
 
+const tokenSavedInLocalStorage = localStorage.getItem("token");
 //user login
-export const userLogin = (loginPost, tokenStr) => {
+export const userLogin = login => {
   return async dispatch => {
+    //localStorage.clear();
     try {
       const response = await fetch("http://localhost:3002/public/auth/login", {
         method: "POST",
-        body: JSON.stringify(loginPost),
+        body: JSON.stringify(login),
         headers: {
           "content-type": "application/json",
         },
       });
 
-      const loginTokenDetails = response.json();
-      if (loginTokenDetails.ok) {
-        localStorage.setItem("token", loginTokenDetails);
-        dispatch(saveLoginToken(tokenStr));
-
+      const loginTokenDetails = await response.json();
+      console.log(loginTokenDetails);
+      if (response.ok) {
+        //localStorage.setItem("token", JSON.stringify(loginTokenDetails));
+        dispatch(saveLoginToken(loginTokenDetails.accessTokenString));
+        dispatch(myProfile(loginTokenDetails.accessTokenString));
         //get my profile after login
         //using the item in local storage
-
-        const tokenSavedInLocalStorage = localStorage.getItem("token");
-
-        try {
-          const resp2 = await fetch("http://localhost:3002/taxpersonnel/my-profile", {
-            headers: {
-              Authorization: `Bearer ${tokenSavedInLocalStorage}`,
-            },
-          });
-
-          if (resp2) {
-            const me = await resp2.json();
-            console.log(me);
-            dispatch(getMyDetails(me));
-          } else {
-            console.log("error fetching me");
-          }
-        } catch (error) {}
+        //console.log("confirming");
       } else {
-        throw new Error(loginPost.message);
+        throw new Error(login.message);
       }
     } catch (error) {
       console.log(error.message);
     }
+  };
+};
+
+//my personal profile
+
+export const myProfile = token => {
+  return async dispatch => {
+    console.log("checked");
+    try {
+      const resp2 = await fetch("http://localhost:3002/taxpersonnel/my-profile", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (resp2) {
+        const me = await resp2.json();
+        console.log(me);
+        dispatch(getMyDetails(me));
+      } else {
+        console.log("error fetching me");
+      }
+    } catch (error) {}
   };
 };
 
@@ -105,20 +116,22 @@ export const getAllCities = () => {
   };
 };
 
-//edit profile
+//fetch profile using udemy profile edit style
+//fetching profile for edit
 
-export const editProfile = details => {
+export const editProfile = (details, token) => {
   return async dispatch => {
     try {
-      const resp = await fetch("http://localhost:3002/taxpersonnel//update/profile", {
+      const resp = await fetch("http://localhost:3002/taxpersonnel/update/profile", {
         method: "PUT",
         body: JSON.stringify(details),
         headers: {
+          Authorization: `Bearer ${token}`,
           "content-type": "application/json",
         },
       });
 
-      const editDetails = resp.json();
+      const editDetails = await resp.json();
       if (editDetails.ok) {
         dispatch(editAUser(editDetails));
         console.log(editDetails);
@@ -131,13 +144,13 @@ export const editProfile = details => {
 
 //select each registered personnel
 
-export const getAllPersonnel = () => {
+export const getAllPersonnel = token => {
   return async dispatch => {
     console.log("logging");
     try {
       let resp = await fetch("http://localhost:3002/taxpersonnel", {
         headers: {
-          //Authorization: `Bearer ${authKey}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 

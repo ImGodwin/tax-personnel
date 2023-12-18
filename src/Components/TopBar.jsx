@@ -1,7 +1,9 @@
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
 const TopBar = () => {
+  const token = useSelector(state => state.user.token);
   const location = useLocation();
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-dark">
@@ -64,9 +66,11 @@ const TopBar = () => {
             </Dropdown>
           </Nav>
         </Navbar.Collapse>
-        <Link style={{ color: "white" }} className={`nav-link ${location.pathname === "me" && "active"}`} to="/me">
-          Profile
-        </Link>
+        {token !== "" && (
+          <Link style={{ color: "white" }} className={`nav-link ${location.pathname === "me" && "active"}`} to="/me">
+            Profile
+          </Link>
+        )}
       </Container>
     </Navbar>
   );

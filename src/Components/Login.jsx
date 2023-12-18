@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Button, Col, Container, Form, FormControl, FormGroup, FormLabel, Row, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import { useDispatch } from "react-redux";
-import { userLogin } from "../redux/action";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, userLogin } from "../redux/action";
 
 const Login = () => {
+  const loginDetails = useSelector(state => state.user.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [login, setLogin] = useState({
@@ -20,6 +21,7 @@ const Login = () => {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(userLogin(login)).then(() => navigate("/"));
+    //console.log(loginDetails);
   };
 
   return (
@@ -61,6 +63,12 @@ const Login = () => {
               <div className="d-flex">
                 <Button type="submit" className="bg-success mt-3 me-auto px-4">
                   Login
+                </Button>
+              </div>
+
+              <div className="d-flex">
+                <Button onClick={() => dispatch(logout())} type="submit" className="bg-success mt-3 me-auto px-4">
+                  Logout
                 </Button>
               </div>
               <p className="d-flex me-auto mt-3">

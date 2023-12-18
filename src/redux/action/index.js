@@ -1,18 +1,20 @@
 export const GET_CITIES = "GET_CITIES";
 export const SET_ADMIN = "SET_ADMIN";
 export const ADD_TOKEN = "ADD_TOKEN";
-export const ADD_USER = "ADD_USER";
+export const ADD_NEW_USER = "ADD_NEW_USER";
 export const EVERY_CITY = "EVERY_CITY";
 export const EDIT_USER = "EDIT_USER";
+export const GET_ME = "GET_ME";
 export const GET_PERSONNEL = "GET_PERSONNEL";
 
 //action creator
-export const saveUser = user => ({ type: ADD_USER, payload: user });
+export const saveUser = user => ({ type: ADD_NEW_USER, payload: user });
 export const saveLoginToken = loginToken => ({ type: ADD_TOKEN, payload: loginToken });
 export const allFetchedCities = cityDetails => ({ type: EVERY_CITY, payload: cityDetails });
 export const editAUser = user => ({ type: EDIT_USER, payload: user });
 export const getAllCollaborators = client => ({ type: GET_PERSONNEL, payload: client });
-
+export const getMyDetails = me => ({ type: GET_ME, payload: me });
+//auth
 //fetch auth
 
 export const registerUser = userDetails => {
@@ -52,7 +54,29 @@ export const userLogin = (loginPost, tokenStr) => {
 
       const loginTokenDetails = response.json();
       if (loginTokenDetails.ok) {
+        localStorage.setItem("token", loginTokenDetails);
         dispatch(saveLoginToken(tokenStr));
+
+        //get my profile after login
+        //using the item in local storage
+
+        const tokenSavedInLocalStorage = localStorage.getItem("token");
+
+        try {
+          const resp2 = await fetch("http://localhost:3002/taxpersonnel/my-profile", {
+            headers: {
+              Authorization: `Bearer ${tokenSavedInLocalStorage}`,
+            },
+          });
+
+          if (resp2) {
+            const me = await resp2.json();
+            console.log(me);
+            dispatch(getMyDetails(me));
+          } else {
+            console.log("error fetching me");
+          }
+        } catch (error) {}
       } else {
         throw new Error(loginPost.message);
       }
@@ -106,15 +130,14 @@ export const editProfile = details => {
 };
 
 //select each registered personnel
-const authKey =
-  "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiIxNzc1NzVmZC03MDAyLTQyOTMtYTJlYS1mYjZiYjY5MTczZDMiLCJpYXQiOjE3MDI4MDgzODksImV4cCI6MTcwMzQxMzE4OX0.OGfdML2euZr0qu6NjslMqKXBkO2zdqgZwynbLRPA-QyHBcKXzPtvIx7yc91xQZ8L";
+
 export const getAllPersonnel = () => {
   return async dispatch => {
     console.log("logging");
     try {
       let resp = await fetch("http://localhost:3002/taxpersonnel", {
         headers: {
-          Authorization: `Bearer ${authKey}`,
+          //Authorization: `Bearer ${authKey}`,
         },
       });
 

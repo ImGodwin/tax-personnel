@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Container, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../redux/action";
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
+
+  const nav = useNavigate();
 
   const [register, setRegister] = useState({
     name: "",
@@ -26,12 +28,14 @@ const RegisterPage = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    console.log(register);
-    dispatch(registerUser(register));
-
+    //console.log(register);
     //fetch save here then useEffect
+    dispatch(registerUser(register)).then(() => nav("/login"));
   };
+
+  useEffect(() => {
+    console.log("registered");
+  }, []);
 
   return (
     <>

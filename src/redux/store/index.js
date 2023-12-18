@@ -5,6 +5,7 @@ import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/
 import userReducer from "../reducer/UserReducer";
 import cityReducer from "../reducer/CityReducer";
 import personnelReducer from "../reducer/PersonnelReducer";
+import meReducer from "../reducer/meReducer";
 
 const persistConfig = {
   key: "root",
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer,
   city: cityReducer,
+  me: meReducer,
   personnel: personnelReducer,
 });
 

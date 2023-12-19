@@ -42,7 +42,7 @@ export const registerUser = userDetails => {
   };
 };
 
-const tokenSavedInLocalStorage = localStorage.getItem("token");
+//const tokenSavedInLocalStorage = localStorage.getItem("token");
 //user login
 export const userLogin = login => {
   return async dispatch => {

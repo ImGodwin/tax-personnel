@@ -1,4 +1,4 @@
-import { ADD_NEW_USER, LOG_IN, LOG_OUT } from "../action";
+import { ADD_NEW_USER, DELETE_PERSONNEL, LOG_IN, LOG_OUT } from "../action";
 
 const initialState = {
   token: "",
@@ -9,7 +9,7 @@ const initialState = {
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOG_IN: {
-      console.log(action.payload);
+      //console.log(action.payload);
       return {
         ...state,
         token: action.payload,

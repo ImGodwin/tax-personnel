@@ -1,13 +1,18 @@
 import { Button, Container, Form, FormControl, FormGroup, FormLabel, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editProfile } from "../redux/action";
+import { deletePersonnel as dp, editProfile } from "../redux/action";
 
 const MyPage = () => {
   const myProfileEdit = useSelector(state => state.me.content);
+  const deletePersonnel = useSelector(state => state.personnel.personnelArr);
+  const myToken = useSelector(state => state.user.token);
+  console.log("my token", myToken);
+  console.log("personnel check", myProfileEdit);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [register, setRegister] = useState({
     name: "",
     surname: "",
@@ -34,10 +39,11 @@ const MyPage = () => {
     handleSubmit();
   }, []); */
 
+  if (!myProfileEdit) return null;
   return (
     <>
       <div className="mt-5">
-        <Image src={myProfileEdit.image} style={{ height: "200px", borderRadius: "25%" }} />
+        <Image src={myProfileEdit?.image} style={{ height: "200px", borderRadius: "25%" }} />
       </div>
 
       <Container className="mt-5 w-50">
@@ -136,6 +142,13 @@ const MyPage = () => {
             {/* add a means to delete profile below */}
           </Button>
         </Form>
+        <Button
+          onClick={() => {
+            dp({ onSuccess: () => navigate("/"), id: myProfileEdit.id, token: myToken });
+          }}
+        >
+          Click to delete profile
+        </Button>
       </Container>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-import { GET_PERSONNEL } from "../action";
+import { DELETE_PERSONNEL, GET_PERSONNEL } from "../action";
 
 const initialState = {
   personnelArr: [],
@@ -11,6 +11,12 @@ const personnelReducer = (state = initialState, action) => {
         ...state,
         personnelArr: action.payload,
       };
+
+    /*  case DELETE_PERSONNEL:
+      return {
+        ...state,
+        personnelArr: state.personnelArr.filter((_, i) => i !== action.payload),
+      }; */
     default:
       return state;
   }

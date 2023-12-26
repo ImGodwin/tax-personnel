@@ -1,4 +1,4 @@
-import { GET_ME } from "../action";
+import { DELETE_PERSONNEL, GET_ME } from "../action";
 
 const initialState = {
   content: null,
@@ -10,6 +10,12 @@ const meReducer = (state = initialState, action) => {
       return {
         ...state,
         content: action.payload,
+      };
+
+    case DELETE_PERSONNEL:
+      return {
+        ...state,
+        personnelArr: action.payload,
       };
     default:
       return state;

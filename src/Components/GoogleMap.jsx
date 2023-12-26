@@ -8,7 +8,7 @@ const GoogleMap = props => {
 
   return (
     <APIProvider apiKey={`${process.env.REACT_APP_GOOGLE_API_MAP_KEY}`}>
-      <Map center={{ lat: Number(lat), lng: Number(lng) }} zoom={12}>
+      <Map center={{ lat: Number(lat), lng: Number(lng) }} zoom={8}>
         <Marker position={{ lat: Number(lat), lng: Number(lng) }} />
       </Map>
     </APIProvider>

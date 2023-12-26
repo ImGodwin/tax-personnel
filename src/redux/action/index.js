@@ -7,6 +7,7 @@ export const EVERY_CITY = "EVERY_CITY";
 export const EDIT_USER = "EDIT_USER";
 export const GET_ME = "GET_ME";
 export const GET_PERSONNEL = "GET_PERSONNEL";
+export const DELETE_PERSONNEL = "DELETE_PERSONNEL";
 
 //action creator
 export const saveUser = user => ({ type: ADD_NEW_USER, payload: user });
@@ -16,9 +17,10 @@ export const editAUser = user => ({ type: EDIT_USER, payload: user });
 export const getAllCollaborators = client => ({ type: GET_PERSONNEL, payload: client });
 export const getMyDetails = me => ({ type: GET_ME, payload: me });
 export const logout = () => ({ type: LOG_OUT, payload: null });
+export const removePersonnel = i => ({ type: DELETE_PERSONNEL, payload: i });
 //auth
-//fetch auth
 
+//register collaborator
 export const registerUser = userDetails => {
   return async dispatch => {
     try {
@@ -78,7 +80,7 @@ export const userLogin = login => {
 
 export const myProfile = token => {
   return async dispatch => {
-    console.log("checked");
+    //console.log("checked");
     try {
       const resp2 = await fetch("http://localhost:3002/taxpersonnel/my-profile", {
         headers: {
@@ -165,4 +167,20 @@ export const getAllPersonnel = token => {
       console.log(error.message);
     }
   };
+};
+
+//delete user
+export const deletePersonnel = async ({ onSuccess, id, token }) => {
+  try {
+    const response = await fetch(`http://localhost:3002/taxpersonnel/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "content-type": "application/json",
+      },
+    });
+    if (response.ok) {
+      onSuccess();
+    }
+  } catch (error) {}
 };

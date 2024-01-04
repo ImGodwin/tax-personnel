@@ -8,6 +8,9 @@ import Login from "./Components/Login";
 import RegisterPage from "./Components/RegisterPage";
 import MyPage from "./Components/MyPage";
 import CityPersonnel from "./Components/CityPersonnelPage";
+import LearnPage from "./Components/LearnPage";
+import AboutPage from "./Components/AboutPage";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -16,22 +19,9 @@ function App() {
         <TopBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/about-us"
-            element={
-              {
-                /* <AboutUs/> */
-              }
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              {
-                /* <Contact/> */
-              }
-            }
-          />
+          <Route path="/about-us" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/learn" element={<LearnPage />} />
           <Route path="/me" element={<MyPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterPage />} />

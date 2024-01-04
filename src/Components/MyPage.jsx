@@ -9,29 +9,27 @@ const MyPage = () => {
   const myProfileEdit = useSelector(state => state.me.content);
   const deletePersonnel = useSelector(state => state.personnel.personnelArr);
   const myToken = useSelector(state => state.user.token);
-  console.log("my token", myToken);
-  console.log("personnel check", myProfileEdit);
+  //console.log("my token", myToken);
+  //console.log("personnel check", myProfileEdit);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [register, setRegister] = useState({
+  const [update, setUpdate] = useState({
     name: "",
     surname: "",
-    email: "",
     telephone: "",
     address: "",
     cityName: "",
     pIva: "",
     description: "",
-    password: "",
   });
 
   const handleChange = (propertyName, propertyValue) => {
-    setRegister({ ...register, [propertyName]: propertyValue });
+    setUpdate({ ...update, [propertyName]: propertyValue });
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(editProfile(register));
+    dispatch(editProfile(update));
     //fetch save here then useEffect
   };
 
@@ -52,11 +50,10 @@ const MyPage = () => {
         </div>
         <Form onSubmit={handleSubmit}>
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.name}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               type="text"
+              placeholder={myProfileEdit.name}
               onChange={firstName => {
                 handleChange("name", firstName.target.value);
               }}
@@ -65,11 +62,10 @@ const MyPage = () => {
           </FormGroup>
 
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.surname}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               type="text"
+              placeholder={myProfileEdit.surname}
               onChange={lastName => {
                 handleChange("surname", lastName.target.value);
               }}
@@ -77,11 +73,10 @@ const MyPage = () => {
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.telephone}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               type="text"
+              placeholder={myProfileEdit.telephone}
               onChange={cellNum => {
                 handleChange("telephone", cellNum.target.value);
               }}
@@ -89,11 +84,10 @@ const MyPage = () => {
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.address}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               type="text"
+              placeholder={myProfileEdit.address}
               onChange={addy => {
                 handleChange("address", addy.target.value);
               }}
@@ -101,11 +95,10 @@ const MyPage = () => {
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.cityName}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               type="text"
+              placeholder={myProfileEdit.cityName}
               onChange={location => {
                 handleChange("cityName", location.target.value);
               }}
@@ -113,11 +106,10 @@ const MyPage = () => {
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.piva}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               type="text"
+              placeholder={myProfileEdit.piva}
               onChange={credential => {
                 handleChange("pIva", credential.target.value);
               }}
@@ -125,21 +117,19 @@ const MyPage = () => {
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel className="d-flex mt-3" style={{ color: "green" }}>
-              {myProfileEdit.description}
-            </FormLabel>
+            <FormLabel className="d-flex mt-3" style={{ color: "green" }}></FormLabel>
             <FormControl
               as="textarea"
               type="text"
+              placeholder={myProfileEdit.description}
               onChange={longText => {
                 handleChange("decription", longText.target.value);
               }}
               required
             />
           </FormGroup>
-          <Button className="mt-3" variant="success">
+          <Button type="submit" className="mt-3" variant="success">
             Update
-            {/* add a means to delete profile below */}
           </Button>
         </Form>
         <Button

@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# IoPagoTasse - Curbing Labor Exploitation Using Javascript(React) And Java(Spring)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Labor exploitation of migrants in southern Europe has become infamous over the years. The exploited either do not understand the language or have little understanding of the importance of paying taxes. ioPagoTasse, as a web application, will be directing interested individuals towards tax and financial advisers who will help them create a better path towards taxes and pensions.
 
-## Available Scripts
+On this application, only known tax personnel in specific regions who meet our specific demands will be accepted as registered users of the platform. Once demands are met, users will be published within their regions so they can be reached by interested users.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+**Client: ** React, React-Redux, Bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Server: ** Java, Spring ## Color Reference
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Color          | Hex                                                              |
+| -------------- | ---------------------------------------------------------------- |
+| TopBar Color   | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
+| Dominant Color | ![#14A44D](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
 
-### `npm test`
+## How to install this React js project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The easiest way to download this project is to
 
-### `npm run build`
+1. Clone this project.
+2. In you terminal, type in "npm i".
+3. Add react bootstrap by typing in "npm i react-bootstrap".
+4. Add redux "npm install @reduxjs/toolkit".
+5. Confirm if you can find the above within the dependencies object in your package.json file.
+6. Run project from console "npm start"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to contribute to this project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Please before making any commits, kindly reach out to the lead developer via mail (godwinmail6@gmail.com).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All development ideas are welcome.
 
-### `npm run eject`
+## Find a bug?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you find an issue or would like to improve the functionality of this application, kindly do so by submitting an issue using the issues tab above, right before the pull request tab.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Known issues
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Please note that this project is still ongoing and every form of technical support/advice would be appreciated.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 About Me
 
-## Learn More
+I'm Godwin, a full-stack developer. I believe hardwork pays but building a community will take you places, hence the reason why i built ioLavoroGratis
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+My tech stack at the moment is Java and Spring for backend, React, CSS, Bootstrap, SASS for frontend development.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I hope you find my project worthwhile.
 
-### Code Splitting
+## Buy me a drink
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you feel generous enough to buy me a cup of espresso, I would be glad - https://www.buymeacoffee.com/iolavoro

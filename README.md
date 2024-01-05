@@ -42,7 +42,7 @@ Please note that this project is still ongoing and every form of technical suppo
 
 ## 🚀 About Me
 
-I'm Godwin, a full-stack developer. I believe hardwork pays but building a community will take you places, hence the reason why i built ioLavoroGratis
+I'm Godwin, a full-stack developer. I believe hardwork pays but building a community will take you places. Hence my reason for building ioLavoroGratis
 
 My tech stack at the moment is Java and Spring for backend, React, CSS, Bootstrap, SASS for frontend development.
 

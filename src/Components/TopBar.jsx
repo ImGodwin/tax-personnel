@@ -16,7 +16,7 @@ const TopBar = () => {
             className={`nav-link ${location.pathname === "/" && "active"}`}
             to="/"
           >
-            IoLavoro
+            IoLavoroGratis
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Col, Container, Row, Image } from "react-bootstrap";
+import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getAllCities } from "../redux/action";
@@ -15,7 +15,6 @@ const Cities = () => {
   }, []);
   return (
     <Container className="mb-5 ">
-      <Link to={`/collaborators/all`}>View All</Link>
       <Row xs={12} md={8} lg={8} className="d-flex justify-content-evenly gy-5">
         {cityArray.map(({ id, latitude, longitude, avatar, name }) => (
           <Col key={id}>
@@ -28,6 +27,11 @@ const Cities = () => {
           </Col>
         ))}
       </Row>
+      <div>
+        <Link to={`/collaborators/all`}>
+          <Button className="bg-success border-0 mt-3 ">View All Collaborators</Button>{" "}
+        </Link>
+      </div>
     </Container>
   );
 };

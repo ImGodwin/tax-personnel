@@ -66,11 +66,11 @@ const Login = () => {
                 </Button>
               </div>
 
-              <div className="d-flex">
+              {/* <div className="d-flex">
                 <Button onClick={() => dispatch(logout())} type="submit" className="bg-success mt-3 me-auto px-4">
                   Logout
                 </Button>
-              </div>
+              </div> */}
               <p className="d-flex me-auto mt-3">
                 If you're not registered, click <Link to={"/register"}> here</Link>
               </p>

@@ -17,7 +17,7 @@ React, React-Redux, Bootstrap
 - Node.js
 - NPM
 
-````sh
+```sh
 # clone Github repo
 git clone https://github.com/ImGodwin/tax-personnel.git
 
@@ -29,8 +29,8 @@ npm i
 
 # start the project
 npm start
-```
 
+```
 
 ## How to contribute to this project
 
@@ -48,7 +48,7 @@ Please note that this project is still ongoing and every form of technical suppo
 
 ## 🚀 About Me
 
-I'm Godwin, a full-stack developer. I believe hard work pays but building a community will take you places. Hence my reason for building ioLavoroGratis
+I'm Godwin, a full-stack developer. I believe hard work pays but building a community will take you places. Hence my reason for building ioPagoTasse
 
 My tech stack is React, CSS, Bootstrap, SASS for the frontend. The backend is built with Java and Spring. You can find the API [here](https://github.com/ImGodwin/taxSolution).
 
@@ -57,4 +57,3 @@ I hope you find my project worthwhile.
 ## Buy me a drink
 
 If you feel generous enough to buy me a cup of espresso, I would be glad - https://www.buymeacoffee.com/iolavoro
-````

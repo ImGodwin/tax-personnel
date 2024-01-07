@@ -28,7 +28,8 @@ cd tax-personnel
 npm i
 
 # start the project
-npm start ```
+npm start
+```
 
 
 ## How to contribute to this project

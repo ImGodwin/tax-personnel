@@ -91,7 +91,7 @@ export const myProfile = token => {
       if (resp2) {
         const me = await resp2.json();
         console.log(me);
-        dispatch(getMyDetails(me));
+        dispatch(editProfile(me));
       } else {
         console.log("error fetching me");
       }
@@ -124,6 +124,7 @@ export const getAllCities = () => {
 export const editProfile = (details, token) => {
   return async dispatch => {
     try {
+      console.log("details", details);
       const resp = await fetch("http://localhost:3002/taxpersonnel/update/profile", {
         method: "PUT",
         body: JSON.stringify(details),
@@ -136,10 +137,10 @@ export const editProfile = (details, token) => {
       const editDetails = await resp.json();
       if (editDetails.ok) {
         dispatch(editAUser(editDetails));
-        console.log(editDetails);
+        //console.log(editDetails);
       }
     } catch (error) {
-      console.log(error.message);
+      //console.log(error.message);
     }
   };
 };

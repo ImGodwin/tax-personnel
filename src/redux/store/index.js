@@ -12,7 +12,6 @@ const persistConfig = {
   storage: storage,
   /* transforms: [encryptTransform({ secretKey: process.env.REACT_APP_PERSIST_KEY })],
   blacklist: [], */
-  whitelist: ["user"],
 };
 
 const rootReducer = combineReducers({

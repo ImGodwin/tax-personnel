@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 const Learn = () => {
   return (

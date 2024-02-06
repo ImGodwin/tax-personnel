@@ -1,9 +1,9 @@
 import { Alert, Button, Container, Form, FormControl, FormGroup, FormLabel, Image } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "../Footer";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deletePersonnel as dp, editProfile } from "../redux/action";
+import { deletePersonnel as dp, editProfile } from "../../redux/action";
 
 const MyPage = () => {
   const myProfileEdit = useSelector(state => state.me.content);

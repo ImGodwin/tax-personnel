@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Card, CardImg, Col, Container, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPersonnel } from "../redux/action";
+import { getAllPersonnel } from "../../redux/action";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const SingleCollaborator = () => {

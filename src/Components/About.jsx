@@ -20,7 +20,7 @@ const About = () => {
           Natus, sequi laudantium aut expedita facere vel. Officiis inventore aliquam aliquid tempore autem culpa!.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fuga illo, provident nemo nihil qui vero
           voluptatem eveniet? Repudiandae obcaecati nulla maiores sint mollitia perferendis illum minus quis vel
-          voluptate.
+          voluptated.
         </p>
       </div>
       <div>

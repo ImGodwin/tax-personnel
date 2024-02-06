@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getAllCities } from "../redux/action";
+import { getAllCities } from "../../redux/action";
 
 const Cities = () => {
   const cityArray = useSelector(state => state.city.content);

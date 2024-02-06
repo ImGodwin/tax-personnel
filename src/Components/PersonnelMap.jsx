@@ -2,10 +2,9 @@
 
 import React from "react";
 import { Container } from "react-bootstrap";
-import { useSelector } from "react-redux";
 
 const PersonnelMap = () => {
-  const select = useSelector(state => state.user.user);
+  //const select = useSelector(state => state.user.user);
   // st stephen green
 
   const lat = 49;

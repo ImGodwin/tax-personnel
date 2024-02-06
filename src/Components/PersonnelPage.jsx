@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import SingleCollaborator from "./SingleCollaborator";
-import GoogleMap from "../mapFolder/GoogleMap";
+import GoogleMap from "./GoogleMap";
 import { useLocation } from "react-router-dom";
 
 const PersonnelPage = () => {

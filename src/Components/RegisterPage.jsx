@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button, Container, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../Footer";
-import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../../redux/action";
+import Footer from "./Footer";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../redux/action";
 
 const RegisterPage = () => {
   const dispatch = useDispatch();

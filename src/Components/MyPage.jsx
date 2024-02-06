@@ -1,13 +1,13 @@
 import { Alert, Button, Container, Form, FormControl, FormGroup, FormLabel, Image } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePersonnel as dp, editProfile } from "../redux/action";
 
 const MyPage = () => {
   const myProfileEdit = useSelector(state => state.me.content);
-  const deletePersonnel = useSelector(state => state.personnel.personnelArr);
+  //const deletePersonnel = useSelector(state => state.personnel.personnelArr);
   const myToken = useSelector(state => state.user.token);
   //console.log("my token", myToken);
   //console.log("personnel check", myProfileEdit);
